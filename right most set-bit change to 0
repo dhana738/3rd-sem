@@ -1,0 +1,7 @@
+8.right most set-bit change to 0
+functionality:
+here for example: 16:10000 15:01111 soo from 1st appeared 1 in 16 we toggle in 15!
+now n =16 and n-1=15 soo perform and operation on n,n-1
+n=int(input())
+n=n&(n-1)
+print(n)
