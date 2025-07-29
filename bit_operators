@@ -1,0 +1,12 @@
+3.bit operaters
+and: all t=t
+     one f=f
+or:all f=f
+   one t=t
+xor:no of 1 even=0
+    no of 1 odd=1
+right shift: >>
+            formula: x//2 power k
+left shift:<<
+           formula: x*(2**(k)) x multipy by 2 and power of k)
+here we may have 32 bit or 64 bit soo here left means we have 0s left side thus more number
