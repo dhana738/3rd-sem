@@ -1,0 +1,11 @@
+1.decimal to binary
+n=int(input())
+binaryresult=""
+if(n==0):
+    print(0)
+    else
+    while(n!=0):
+        rem=n%2
+        binaryresult+=str(rem)
+        n=n//2
+    print(binaryresult[::-1])
