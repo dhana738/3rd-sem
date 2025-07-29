@@ -1,0 +1,10 @@
+4.check set bit
+bit is called set-bit if it is 1
+use left shift(1<<k) for the another binary number to perform in and operation
+use and operator,if answer is all 0s then it is not a set bit!!
+                 if answer include 1 then it is a set bit!!
+n=int(input())
+k=int(input())
+    if((n&(1<<k))==0):
+        return False
+    return True
