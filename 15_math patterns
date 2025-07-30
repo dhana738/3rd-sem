@@ -1,0 +1,143 @@
+Patterns
+
+#Outer loop indicates number of rows to be printed(n)
+#Inner loop indicates number of columns to be printed 
+n=int(input())
+for i in range(n)
+   for j in range(n)
+   Print("*",end="  ")
+Print()
+Output 
+* * * * 
+* * * *
+* * * *
+* * * *
+
+for i in range(n)
+   for j in range(i+1)
+   Print("*",end="  ")
+Print()
+Output
+*
+* *
+* * *
+* * * *
+
+for i in range(n)
+   for j in range( n-i)
+   Print("*",end="  ")
+Print()
+Output
+* * * *
+* * * 
+* *
+*
+
+# Formula: 2*i+1 to get 1 3 5 7 stars
+# n-i-1 to get spaces 
+for i in range(n)
+     for j in range (n-i-1)
+        print (" ",end=" ")
+    for j in range( 2*i+1)
+       print("*",end="  ")
+print()
+Output 
+      *
+    * * *
+  * * * * *
+* * * * * * *
+
+for i in range(n)
+for j in range (i)
+        print (" ",end=" ")
+    for j in range( 2*(n-i)-1)
+       print("*",end="  ")
+print()
+Output 
+* * * * * * *
+  * * * * *
+    * * *
+      *
+
+for i in range(n)
+   for j in range(i+1)   # i+1 is for to printing Right Angle
+        Print(i+1,end="  ")
+Print()
+Output 
+1
+2 2 
+3 3 3
+4 4 4 4
+
+for i in range(n)
+   for j in range(i+1)
+        Print(j+1,end="  ")
+Print()
+Output 
+1
+1 2
+1 2 3
+1 2 3 4
+
+for i in range(n)
+   for j in range( n-i)
+   Print(j+1,end="  ")
+Print()
+Output 
+1 2 3
+1 2
+1
+
+for i in range(n)
+     for j in range (n-i-1)
+        print (" ",end=" ")
+    for j in range( 2*i+1)
+       print("*",end="  ")
+print()
+for i in range(n)
+for j in range (i)
+        print (" ",end=" ")
+    for j in range( 2*(n-i)-1)
+       print("*",end="  ")
+print()
+Output 
+  *
+ * *
+* * *
+* * *
+ * *
+  *
+
+for i in range(n-1)
+   for j in range(i+1)
+   Print("*",end="  ")
+Print()
+for i in range(n)
+   for j in range( n-i)
+   Print("*",end="  ")
+Print()
+Output 
+*
+* *
+* * * 
+* * 
+*
+
+for i in range(n):
+   for j in range(i+1):
+      if(((i+j)%2)==0):
+         Print("1",end="  ")
+       else:
+       Print("0",end="  ")
+Print()
+Output 
+1
+0 1 
+1 0 1
+
+for i in range(n)
+     for j in range (n-i-1)
+          print (" ",end=" ")
+    for j in range( 2*i+1)
+          print("*",end="  ")
+print()
