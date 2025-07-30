@@ -1,0 +1,6 @@
+numerator=(num1*den2)+(num2*den1)
+Denominator=(den1*den2)
+d=gcd(numerator, denominator)
+numerator//=d
+denominator//=s
+print(f"{ numerator}/{denominator}")
