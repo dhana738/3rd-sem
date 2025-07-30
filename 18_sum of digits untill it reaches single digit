@@ -1,0 +1,11 @@
+Problem statement 
+Sum of digits till single digit 
+n=int(input())
+While(num>10):
+    sum=0
+    while ( n>0):
+         rem=n%10
+         Sum+=rem
+          n=n//10
+    num=sum
+Print(sum)
