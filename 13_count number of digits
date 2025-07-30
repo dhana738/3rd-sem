@@ -1,0 +1,28 @@
+Count number of digits 
+Divide by 10 approach 
+# divide number with ten then reminder should be last digit 
+#Then quotient add as new num
+#And increase count value every time division occurs 
+CODE
+n=int(input())
+C=0
+While(n>0):
+    n=n//10
+    c+=1
+Print(c)
+     Dry run!
+123
+C=0
+n= 123>0  so true 
+n//10=n thus 123//10
+n=12
+C=1
+n=12>0 so true 
+n//10=n this 12//10
+n=1
+C=2
+n=1>0  so true 
+N//10=n this this 1/10
+N=0
+C=3
+0>0 thus loop stops 
