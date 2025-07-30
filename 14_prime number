@@ -1,0 +1,17 @@
+Prime number: will take the count of no of factors 
+n=int(input())
+c=0
+for i in range (1,n+1):
+     if(n%i==0):
+          c=c+1
+if(c==2):  
+    print("prime")
+else:
+    print("not a prime")
+
+Dry run
+n=4 
+i=1
+count=0
+4%1= 0 then
+count=0+1
