@@ -1,0 +1,35 @@
+#TO GENERATE MAX SUB ARRAY
+nums=[2,3,4]
+n=len(nums)
+ans=[]
+for i in range(0,n):
+    for j in range(i,n):
+        ans.append(nums[i:j+1])
+Max=float("-inf")
+for lst in ans:
+    if(sum(lst)>Max):
+       Max=sum(lst)
+print(Max)
+
+#LIST TO DICTIONARY
+n=list(map(int,input().split()))
+d={}
+for i in nums:
+if(i in d):
+d[i]=d[i]+1
+else:
+d[i]=1
+print(d)
+
+#MAX SUBARRAY(KADENES ALOGORITHM)if cs is negative then to make +ve
+class Solution:
+    def maxSubArray(self,nums):
+        n=len(nums)
+        cs=0
+        ms=float("-inf")
+        for i in nums:
+            cs+=i
+            ms=max(ms,cs)
+            if(cs<0):
+                cs=0
+        return ms
