@@ -1,0 +1,47 @@
+PRODUCT OF ARRAY EXCEPT ITSELF
+#BRUTE FORCE SOLUTION:
+nums=[1,2,3,4]
+n=len(nums)
+result=[]
+for i in range(0,n):
+  product=1
+for j in range(0,n):
+if i!=j:
+product*=nums[j]
+result.append(product)
+print(result)
+
+NEXT SOLUTION:
+nums=[1,2,3,4]
+n=len(nums)
+no_of_zeros=0
+prod=1
+for i in nums:
+    if(i==0):
+        no_of_zeros+=1
+    else:
+        prod*=i
+ans=[]
+for i in nums:
+    if(no_of_zeros>1):
+        ans.append(0)
+    else:
+        if(no_of_zeros==1):
+            if(i==0):
+                ans.append(prod)
+            else:
+                ans.append(0)
+        else:
+            ans.append(prod//i)
+print(ans)
+
+LEFT AND RIGHT ARRAY METHOD
+1st write a array of all  0 then
+create a left array: [1 2 3 4]
+ 1*4=4 [ 0 0 0 4]
+4*3=12 [ 0 0 12 4]
+12*2=24 [ 0 24 12 4]
+24*1=24 [24 24 12 4]
+
+create a right array: [1 2 3 4]
+
