@@ -1,0 +1,100 @@
+SUB ARRAYS
+-->TAKE/NOT TAKE
+
+[] [1 2 3]
+    .
+    | TAKE            NOT TAKE
+    |
+[1] [1 2 3]       [] [1 2 3]
+       .
+TAKE   |
+       |
+[1 2] [1 2 3]    [1] [1 2 3]
+           .
+  TAKE     |
+           |
+[1 2 3] [123]     [1 2] [1 2 3]
+#sub arrays 78 .leetcode
+class Solution:
+    def generate(self,ind,curr_subset,ans,nums):
+        if(ind==len(nums)
+            ans.append(curr_subset.copy())
+            return
+        curr_subset.append(nums[ind])
+        self.generate(ind+1,curr_subset,ans,nums)
+        curr_subset.pop()
+        self.generate(ind+1,curr_subset,ans,nums)
+    def subsets(self,nums):
+        ind=0
+        curr_subset=[]
+        ans=[]
+        self.generate(ind,curr_subset,ans,nums)
+        return ans
+obj=Solution()
+nums=[1,2,3]
+print(obj.subsets(nums))
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+COMBINATION SUM
+class Solution:
+    def generate(self,ind,curr_subset,ans,candidates,target):
+        if(target==0):
+            ans.append(curr_subset.copy())
+            return
+        if(target<0):
+            return
+        if(ind==len(candidates)):
+            return
+        curr_subset.append(candidates[ind])
+        self.generate(ind,curr_subset,ans,candidates,target-candidates[ind])
+        curr_subset.pop()
+        self.generate(ind+1,curr_subset,ans,candidates,target)
+    def combinationSum(self,candidates):
+        ind=0
+        curr_subset=[]
+        ans=[]
+        self.generate(ind,curr_subset,ans,candidates,target)
+        return ans
+obj=Solution()
+candidates=[1,2,3]
+target=4
+print(obj.combinationSum(candidates))
+============================================================================================================================================================================
+GENERATE VALID PARANTHESIS(22 QUES)
+class Solution:
+    def generate(self,curr_str,ans,Open,Close,n):
+        if(Open==Close and Open+Close==2*n):
+            ans.append(curr_str)
+            return
+        if(Open>n):
+            return
+        if(Close>Open):
+            return
+        self.generate(curr_str+"(",ans,Open+1,Close,n)
+        self.generate(curr_str+")",ans,Open,Close+1,n)
+    def generateParanthesis(self,n):
+        curr_str=""
+        ans=[]
+        Open=0
+        Close=0
+        self.generate(curr_str,ans,Open,Close,n)
+        return ans
+obj=Solution()
+n=2
+print(obj.generateParanthesis(n))
+============================================================================================================================================================================
+#check if there exists a sub sequence with sum-k
+class Solution:
+    def check(self,ind,arr,K):
+        if(K==0):
+            return True
+        if(K<0 or ind==len(arr)):
+            return False
+        path1=self.check(ind+1,arr,K-arr[ind])
+        if(path1==True):
+            return True
+        path2=self.check(ind+1,arr,K)
+        return path1 or path2
+    def checkSubsequenceSum(self,N,arr,K):
+        ind=0
+        return self.check(ind,arr,K)
+=======================================================================================================================================================================
