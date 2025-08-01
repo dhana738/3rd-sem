@@ -1,0 +1,52 @@
+PASCAL TRIANGLE
+'''given r and c then which element is there in particular row and column'''
+row=int(input())#5
+col=int(input())#3
+n=row-1
+r=col-1
+ans=1
+for i in range(r):
+  ans=ans*(n-i)
+  ans=ans//(i+1)#7/1 6/2 5/3
+print(ans)'''
+
+'''given a nth row print all elemnets of that r
+BRUTE FORCE:
+def ncr(n,r):
+    ans=1
+    for i in range(r):
+        ans=ans*(n-i)
+        ans=ans//(i+1)
+    return ans
+row=int(input())#3
+result=[]
+for col in range(1,row+1):
+    result.append(ncr(row-1,col-1))
+print(result)# 1 2 1
+ 
+OPTIMAL SOLUTION:
+row=int(input())#T.C:- O(N)
+ans=1
+result=[ans]
+for col in range(1,row):
+    ans=ans*(row-col)
+    ans=ans//(col)
+    result.append(ans)
+print(result)
+
+'''given n row prints all the pascal triangle'''
+def generateRow(row):
+    ans=1
+    result=[ans]
+  for col in range(1,row):
+        ans=ans*(row-col)
+        ans=ans//(col)
+          result.append(ans)
+  return result
+finalResult=[]
+rows=int(input())
+for row in range(1,rows+1):
+    finalResult.append(generateRow(row))
+for lst in finalResult:
+    print(*lst)
+
